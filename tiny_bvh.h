@@ -872,6 +872,7 @@ public:
 	BVH( BVH&& ) noexcept;
 	BVH& operator=( const BVH& other )=default;
 	~BVH();
+
 	void ConvertFrom( const BVH_Verbose& original, bool compact = true );
 	void SplitLeafs( const uint32_t maxPrims );
 	float SAHCost( const uint32_t nodeIdx = 0 ) const;
@@ -1062,6 +1063,7 @@ public:
 	BVH_Double( BVH_Double&& );
 	BVH_Double& operator=( const BVH_Double& )=default;
 	~BVH_Double();
+
 	void Build( const bvhdbl3* vertices, const uint64_t primCount );
 	void Build( BLASInstanceEx* bvhs, const uint64_t instCount, BVH_Double** blasses, const uint64_t blasCount );
 	void Build( void (*customGetAABB)(const uint64_t, bvhdbl3&, bvhdbl3&), const uint64_t primCount );
@@ -1115,6 +1117,7 @@ public:
 	BVH_GPU( BVH_GPU&& );
 	BVH_GPU& operator=( const BVH_GPU& )=default;
 	~BVH_GPU();
+
 	void Build( const bvhvec4* vertices, const uint32_t primCount );
 	void Build( const bvhvec4slice& vertices );
 	void Build( const bvhvec4* vertices, const uint32_t* indices, const uint32_t primCount );
@@ -1151,6 +1154,7 @@ public:
 	BVH_SoA( BVH_SoA&& );
 	BVH_SoA& operator=( const BVH_SoA& )=default;
 	~BVH_SoA();
+
 	void Build( const bvhvec4* vertices, const uint32_t primCount );
 	void Build( const bvhvec4slice& vertices );
 	void Build( const bvhvec4* vertices, const uint32_t* indices, const uint32_t primCount );
